@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
-import BookList from './BookList';
+// import BookList from './BookList';
 
 const APIKey = 'AIzaSyB7UAb6EhKjOvZWbSnTzIb43wOsV7fPDZA';
 const URL = 'https://www.googleapis.com/books/v1/volumes?q=';
@@ -18,13 +18,14 @@ class App extends Component {
     this.performSearch();
   }
 
-  performSearch = (query = 'Harry Potter') => {
+  performSearch = (query = 'harry potter') => {
     fetch(`${URL}${query}+key=${APIKey}`)
     .then(response => response.json())
-      .then(responseData => {
+      .then(data => {
         this.setState({
-          books: responseData,
+          books: data.items,
         });
+      console.log(this.state)
       })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
@@ -32,13 +33,18 @@ class App extends Component {
   }
 
   render() {
+    const { books } = this.state;
     return (
       <div className="App">
         <h1>Book Finder</h1>
           <SearchBar onSearch={this.performSearch}/>
-          <div>
-            <BookList books={this.state.books}/>
-          </div>
+          <ul>
+            {books.map(book =>
+              <li key={book.id}>
+                <h1>{book.id}</h1>
+              </li>
+            )}
+          </ul>
       </div>
     );
   }
