@@ -10,8 +10,9 @@ class SearchBar extends Component {
     }
 
     handleSubmit(event) {
-        alert(this.state.value)
         event.preventDefault();
+        this.props.onSearch(this.query.value);
+        this.setState({value: ''});
     }
 
     handleChange(event) {
@@ -25,6 +26,7 @@ class SearchBar extends Component {
             <input
                 type="text"
                 value={this.state.value}
+                ref={(input) => this.query = input}
                 placeholder="Search for books..."
                 onChange={this.handleChange} />
             <button type="submit">Search</button>
