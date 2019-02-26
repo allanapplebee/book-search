@@ -4,7 +4,10 @@ const BookList = props =>
 <ul>
     {props.books.map(book =>
     <li key={book.id}>
-        <h1>{book.id}</h1>
+        <div>
+            <img src={book.volumeInfo.imageLinks.thumbnail} />
+            <p>{book.volumeInfo.title}</p>
+        </div>
     </li>
     )}
 </ul>
