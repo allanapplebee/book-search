@@ -18,7 +18,7 @@ class App extends Component {
     this.performSearch();
   }
 
-  performSearch = (query = 'harry potter') => {
+  performSearch = (query = '') => {
     fetch(`${URL}${query}+key=${APIKey}`)
     .then(response => response.json())
       .then(data => {

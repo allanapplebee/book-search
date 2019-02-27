@@ -1,8 +1,13 @@
 import React from 'react';
 
-const BookList = props =>
+const BookList = ({books}) => {
+if(!books || books === []) {
+    return <div>No books found, please try again</div>
+}
+else {
+return (
 <ul>
-    {props.books.map(book =>
+    {books.map(book =>
     <li key={book.id}>
         <div>
             <img alt="book cover" src={book.volumeInfo.imageLinks.thumbnail} />
@@ -12,6 +17,6 @@ const BookList = props =>
             <a className="btn btn-primary" href={book.volumeInfo.previewLink}>See this book</a>
         </div>
     </li>
-    )}
-</ul>
+    )};
+</ul>)}}
 export default BookList;
