@@ -5,8 +5,11 @@ const BookList = props =>
     {props.books.map(book =>
     <li key={book.id}>
         <div>
-            <img src={book.volumeInfo.imageLinks.thumbnail} />
+            <img alt="book cover" src={book.volumeInfo.imageLinks.thumbnail} />
             <p>{book.volumeInfo.title}</p>
+            <p>By: {book.volumeInfo.authors}</p>
+            <p>Published by: {book.volumeInfo.publisher}</p>
+            <a className="btn btn-primary" href={book.volumeInfo.previewLink}>See this book</a>
         </div>
     </li>
     )}
