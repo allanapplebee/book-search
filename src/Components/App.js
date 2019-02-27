@@ -25,7 +25,7 @@ class App extends Component {
         this.setState({
           books: data.items,
         });
-      console.log(this.state)
+      // console.log(this.state)
       })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
