@@ -19,7 +19,7 @@ const BookList = ({books}) => {
                                 <h5 className="card-title">{book.volumeInfo.title}</h5>
                                 <p className="card-text">By: {'authors' in book.volumeInfo ? book.volumeInfo.authors : 'Unknown'}</p>
                                 <p className="card-text">Published by: {'publisher' in book.volumeInfo ? book.volumeInfo.publisher : 'Unknown'}</p>
-                                <a href={book.volumeInfo.previewLink} className="btn btn-primary">See this book</a>
+                                <a href={book.volumeInfo.canonicalVolumeLink} className="btn btn-primary">See this book</a>
                             </div>
                             </div>
                         </div>
