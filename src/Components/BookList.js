@@ -7,14 +7,14 @@ const BookList = ({books}) => {
 
     else {
         return (  
-            <div className="container-fluid">
+            <div>
             
                 {books.map(book =>
                 // <li key={book.id}>
-                    <div key={book.id} class="row">
-                        <div className="col-sm-6">
+                    // <div>
+                        <div key={book.id} className="col-sm-6">
                             <div className="card">
-                            <img className="card-img-top" alt="book cover" src={'imageLinks' in book.volumeInfo ? book.volumeInfo.imageLinks.thumbnail : 'https://upload.wikimedia.org/wikipedia/en/f/f9/No-image-available.jpg'} />
+                            <img className="card-img-top" alt="book cover" src={'imageLinks' in book.volumeInfo ? book.volumeInfo.imageLinks.thumbnail : null} />
                             <div className="card-body">
                                 <h5 className="card-title">{book.volumeInfo.title}</h5>
                                 <p className="card-text">By: {'authors' in book.volumeInfo ? book.volumeInfo.authors : 'Unknown'}</p>
@@ -23,7 +23,7 @@ const BookList = ({books}) => {
                             </div>
                             </div>
                         </div>
-                    </div>
+                    // </div>
             
                     // <div>
                         // <img alt="book cover" src={'imageLinks' in book.volumeInfo ? book.volumeInfo.imageLinks.thumbnail : 'https://upload.wikimedia.org/wikipedia/en/f/f9/No-image-available.jpg'} />

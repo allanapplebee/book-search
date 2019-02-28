@@ -22,14 +22,15 @@ class SearchBar extends Component {
     render() {
       return (
         <div className="search-bar">
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="form-inline">
             <input
                 type="text"
                 value={this.state.value}
                 ref={(input) => this.query = input}
                 placeholder="Search for books..."
-                onChange={this.handleChange} />
-            <button type="submit">Search</button>
+                onChange={this.handleChange} 
+                className="form-control mr-sm-2"/>
+            <button type="submit" className="btn btn-primary my-2 my-sm-0">Search</button>
           </form>
         </div>
       );

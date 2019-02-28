@@ -34,9 +34,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Book Finder</h1>
-        <SearchBar onSearch={this.performSearch}/>
+      <div className="App container">
+        <div className="jumbotron jumbotron-fluid">
+            <div className="container">
+            <h1 className="display-4">Book Finder</h1>
+            <SearchBar onSearch={this.performSearch}/>
+            </div>
+        </div>
+        
         <BookList books={this.state.books}/>
       </div>
     );
