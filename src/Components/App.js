@@ -41,7 +41,6 @@ class App extends Component {
             <SearchBar onSearch={this.performSearch}/>
             </div>
         </div>
-        
         <BookList books={this.state.books}/>
       </div>
     );
