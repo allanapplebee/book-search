@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import BookList from './BookList';
+import './App.css';
 
 const APIKey = 'AIzaSyB7UAb6EhKjOvZWbSnTzIb43wOsV7fPDZA';
 const URL = 'https://www.googleapis.com/books/v1/volumes?q=';
