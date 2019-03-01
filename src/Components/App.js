@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      books: []
+      books: [],
     }
   };
 
@@ -18,7 +18,7 @@ class App extends Component {
     this.performSearch();
   }
 
-  performSearch = (query = '') => {
+  performSearch = (query) => {
     fetch(`${URL}${query}+key=${APIKey}`)
     .then(response => response.json())
       .then(data => {
@@ -38,10 +38,10 @@ class App extends Component {
         <div className="jumbotron jumbotron-fluid">
             <div className="container">
             <h1 className="display-4">Book Finder</h1>
-            <SearchBar onSearch={this.performSearch}/>
+            <SearchBar onSearch={this.performSearch} />
             </div>
         </div>
-        <BookList books={this.state.books}/>
+        <BookList books={this.state.books} />
       </div>
     );
   }

@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class SearchBar extends Component {
     constructor(props) {
       super(props);
-      this.state = {value: ''};
+      this.state = {
+        value: '',
+        };
 
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,7 +34,9 @@ class SearchBar extends Component {
                 className="form-control mr-sm-2"/>
             <button type="submit" className="btn btn-primary my-2 my-sm-0">Search</button>
           </form>
+          <div>{this.props.msg}</div>
         </div>
+
       );
     }
 }
